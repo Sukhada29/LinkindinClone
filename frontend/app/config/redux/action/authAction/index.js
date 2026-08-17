@@ -268,7 +268,7 @@ export const withdrawConnectionRequest = (connectionId) => async (dispatch) => {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            "http://localhost:9090/user/withdraw_connection_request",
+            `${process.env.NEXT_PUBLIC_API_URL}/user/withdraw_connection_request`,
             {
                 method: "POST",
                 headers: {

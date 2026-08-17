@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const BASE = "http://localhost:9090";
+const BASE = process.env.NEXT_PUBLIC_API_URL;
 
 // Create a new post (supports text + optional image)
 export const createPost = createAsyncThunk(

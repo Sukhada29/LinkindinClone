@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.container {
+  font-family: "Poppins";
+  padding: 1.2rem;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding-inline: 2rem;
+  height: 80vh;
+}
+
+.mainContainer_left {
+  flex: 0.5;
+}
+
+.mainContainer_right {
+  flex: 0.5;
+}
+
+.mainContainer_left > p:nth-child(1) {
+  font-size: 2.9rem;
+  background: -webkit-linear-gradient(45deg, #000000, #b2b2b2);
+  background-clip: text;
+  font-weight: bold;
+  -webkit-text-fill-color: transparent;
+}
+
+.mainContainer_left > p:nth-child(2) {
+  color: #4d4d4d;
+  font-size: 1.7rem;
+}
+
+.mainContainer_left > div.buttonJoin {
+  width: fit-content;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  background: rgb(197, 44, 208);
+  color: white;
+  padding-inline: 1.2rem;
+  padding-block: 0.6rem;
+  border-radius: 20px;
+}

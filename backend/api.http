@@ -1,0 +1,213 @@
+POST http://localhost:9090/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "rahul1",
+    "password": "a",
+    "email": "rahul@gmail.com",
+    "name": "Rahul"
+}
+
+###
+
+POST http://localhost:9090/register
+Content-Type: application/json
+
+{
+    "name": "Test",
+    "username": "test",
+    "email": "test@gmail.com",
+    "password": "123456"
+}
+
+###
+
+
+POST http://localhost:9090/login HTTP/1.1
+content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "123456"
+}
+
+###
+
+POST http://localhost:9090/login HTTP/1.1
+content-Type: application/json
+
+{
+    "email": "rahul@gmail.com",
+    "password": "a"
+}
+
+###
+POST http://localhost:9090/register
+Content-Type: application/json
+
+{
+    "name": "Alice",
+    "username": "alice",
+    "email": "alice@gmail.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:9090/register
+Content-Type: application/json
+
+{
+    "name": "Bob",
+    "username": "bob",
+    "email": "bob@gmail.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:9090/login
+Content-Type: application/json
+
+{
+    "email": "alice@gmail.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:9090/login
+Content-Type: application/json
+
+{
+    "email": "bob@gmail.com",
+    "password": "123456"
+}
+
+###
+
+GET http://localhost:9090/get_user_and_profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzE2Mjc4ZjU3NTg0NDM5MWNjZTNlMCIsImVtYWlsIjoiYm9iQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiYm9iIiwiaWF0IjoxNzg1ODE1NzU0LCJleHAiOjE3ODU4MTkzNTR9.SKhOCaYbN_7wub91rqiTSTJRBmtK5lPdn7xyA4iep7c
+###
+
+
+POST http://localhost:9090/update_profile_data
+Content-Type: application/json
+
+{
+    "token": "607111c551302e036ec8d38f55b57f50e0bb886405b74df75b9ffd476cfafa8d",
+    "bio": "I am learning backend",
+    "currentPost": "CTO",
+    "pastWork": [
+        {
+            "company": "Microsoft",
+            "position": "CTO",
+            "years": "2+"
+        }
+    ],
+    "education": [
+        {
+            "school": "IIT",
+            "degree": "B.Tech",
+            "fieldOfStudy": "2015-2019"
+        }
+    ]
+}
+
+###
+
+GET http://localhost:9090/user/get_all_users
+
+###
+
+POST http://localhost:9090/post
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzE2MjZjZjU3NTg0NDM5MWNjZTNkYiIsImVtYWlsIjoiYWxpY2VAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhbGljZSIsImlhdCI6MTc4NTgzNzI5NSwiZXhwIjoxNzg1ODQwODk1fQ.gUDSn8KIHXkwno1MlefYh7PV-rrRUJxopI6f_oSobUk
+Content-Type: application/json
+
+{
+    "body": "Testing Comment System"
+}
+
+###
+POST http://localhost:9090/post
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzE2Mjc4ZjU3NTg0NDM5MWNjZTNlMCIsImVtYWlsIjoiYm9iQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiYm9iIiwiaWF0IjoxNzg1ODM3NDI2LCJleHAiOjE3ODU4NDEwMjZ9.sqcAiYmzzerCNH-RM_gxusJLK_f_C4TtmpJsG2CuVy8
+Content-Type: application/json
+
+{
+    "body": "Hello, I am Bob!"
+}
+
+###
+
+DELETE http://localhost:9090/delete_post
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmM2NmI0NTQ1MGZkZTUyMjczOGRkZSIsImVtYWlsIjoicmFodWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJyYWh1bDEiLCJpYXQiOjE3ODU1NzMyNjMsImV4cCI6MTc4NTU3Njg2M30.VyxixIrv2P9eId5JE3hASrfTl3Bx_cHAnN68Gg567XE
+Content-Type: application/json
+
+{
+    "postId": "6a6d7465b89a2b5faf72a49d"
+}
+
+
+###
+
+POST http://localhost:9090/comment
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmM2NmI0NTQ1MGZkZTUyMjczOGRkZSIsImVtYWlsIjoicmFodWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJyYWh1bDEiLCJpYXQiOjE3ODU2ODA3NTgsImV4cCI6MTc4NTY4NDM1OH0.0Jkm0OP4L1x8NsqDsx8EYHErpuz4wEVu9_Xix0G1MLY
+Content-Type: application/json
+
+{
+    "postId": "6a6f53fda593c88ed183d0d3",
+    "body": "This is my first comment!"
+}
+
+###
+
+GET http://localhost:9090/get_comments?postId=6a6f53fda593c88ed183d0d3
+
+
+###
+
+DELETE http://localhost:9090/delete_comment
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmM2NmI0NTQ1MGZkZTUyMjczOGRkZSIsImVtYWlsIjoicmFodWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJyYWh1bDEiLCJpYXQiOjE3ODU2ODA3NTgsImV4cCI6MTc4NTY4NDM1OH0.0Jkm0OP4L1x8NsqDsx8EYHErpuz4wEVu9_Xix0G1MLY
+Content-Type: application/json
+
+{
+    "commentId": "6a6f5463a593c88ed183d0d6"
+}
+
+
+###
+POST http://localhost:9090/user/send_connection_request
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzE2MjZjZjU3NTg0NDM5MWNjZTNkYiIsImVtYWlsIjoiYWxpY2VAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhbGljZSIsImlhdCI6MTc4NTgzNzI5NSwiZXhwIjoxNzg1ODQwODk1fQ.gUDSn8KIHXkwno1MlefYh7PV-rrRUJxopI6f_oSobUk
+Content-Type: application/json
+
+{
+    "connectionId": "6a716278f575844391cce3e0"
+}
+
+###
+GET http://localhost:9090/user/user_connection_request
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzE2MjZjZjU3NTg0NDM5MWNjZTNkYiIsImVtYWlsIjoiYWxpY2VAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhbGljZSIsImlhdCI6MTc4NTgyNTc1NywiZXhwIjoxNzg1ODI5MzU3fQ.A3FxCrW8WP7sbgtnDyI4gBFYyHcJ3IInksbfycKb1hI
+
+###
+GET http://localhost:9090/user/pending_connection_requests
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzE2Mjc4ZjU3NTg0NDM5MWNjZTNlMCIsImVtYWlsIjoiYm9iQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiYm9iIiwiaWF0IjoxNzg1ODI1ODQxLCJleHAiOjE3ODU4Mjk0NDF9.h2cPenlZSSjPc7oVuIFHJXcepS4zi-oMX90-5IxEYDI
+
+###
+POST http://localhost:9090/user/accept_connection_request
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzE2Mjc4ZjU3NTg0NDM5MWNjZTNlMCIsImVtYWlsIjoiYm9iQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiYm9iIiwiaWF0IjoxNzg1ODM3NDI2LCJleHAiOjE3ODU4NDEwMjZ9.sqcAiYmzzerCNH-RM_gxusJLK_f_C4TtmpJsG2CuVy8
+Content-Type: application/json
+
+{
+    "requestId": "6a716360f575844391cce3ed",
+    "action_type": "accept"
+}
+
+###
+GET http://localhost:9090/user/getConnectionRequests
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmM2NmI0NTQ1MGZkZTUyMjczOGRkZSIsImVtYWlsIjoicmFodWxAZ21haWwuY29tIiwidXNlcm5hbWUiOiJyYWh1bDEiLCJpYXQiOjE3ODU3MzUzMjEsImV4cCI6MTc4NTczODkyMX0.d32dnAodgwJGhBobW3ZQI-tsAOLVKp8rbClpp--xwu4
+
+###
+
+GET http://localhost:9090/user/feed
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzE2MjZjZjU3NTg0NDM5MWNjZTNkYiIsImVtYWlsIjoiYWxpY2VAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhbGljZSIsImlhdCI6MTc4NTgzNzI5NSwiZXhwIjoxNzg1ODQwODk1fQ.gUDSn8KIHXkwno1MlefYh7PV-rrRUJxopI6f_oSobUk
+
+###
+GET http://localhost:9090/user/search?query=ali
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzE2MjZjZjU3NTg0NDM5MWNjZTNkYiIsImVtYWlsIjoiYWxpY2VAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhbGljZSIsImlhdCI6MTc4NTg0MTA1MiwiZXhwIjoxNzg1ODQ0NjUyfQ.aKnVowcWQIZfP_NWJppxFfzBgVipssO7G-EgaGhbvp4

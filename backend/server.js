@@ -7,21 +7,24 @@ import userRoutes from "./routes/user.routes.js";
 
 dotenv.config();
 
-
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(postRoutes)
-app.use(userRoutes)
+
+app.use(postRoutes);
+app.use(userRoutes);
+
 app.use("/uploads", express.static("uploads"));
+
+const PORT = process.env.PORT || 9090;
 
 const start = async () => {
     await mongoose.connect(process.env.MONGODB_URL);
 
-    app.listen(9090, () => {
-        console.log("Server is running on port 9090");
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
     });
-}
+};
 
 start();

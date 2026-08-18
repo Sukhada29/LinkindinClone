@@ -18,6 +18,8 @@ import {
 
 export default function DashboardLayout({ children }) {
 
+  const BASE = process.env.NEXT_PUBLIC_API_URL;  
+
     const router = useRouter();
     const dispatch = useDispatch();
 
@@ -158,7 +160,7 @@ export default function DashboardLayout({ children }) {
                                 >
 
                                     <img
-                                        src={`http://localhost:9090/uploads/${profile.userId?.profilePicture}`}
+                                        src={`${BASE}/uploads/${profile.userId?.profilePicture}`}
                                         alt="Profile"
                                         className={
                                             styles.extraContainer_profile_image

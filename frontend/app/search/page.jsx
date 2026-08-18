@@ -5,7 +5,7 @@ import UserLayout from "@/app/(user)/layout";
 import DashboardLayout from "@/app/DashboardLayout";
 import { useRouter } from "next/navigation";
 
-const BASE = "http://localhost:9090";
+const BASE = process.env.NEXT_PUBLIC_API_URL;
 
 export default function SearchPage() {
 

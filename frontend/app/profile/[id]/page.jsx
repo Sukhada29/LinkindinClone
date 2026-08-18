@@ -7,6 +7,8 @@ import { getUserProfileById, sendConnectionRequest, withdrawConnectionRequest, g
 
 export default function OtherProfile() {
 
+ const BASE = process.env.NEXT_PUBLIC_API_URL;   
+
     const params = useParams();
     const dispatch = useDispatch();
 
@@ -61,7 +63,7 @@ export default function OtherProfile() {
             <h1>Profile</h1>
 
             <img
-                src={`http://localhost:9090/uploads/${profile.userId?.profilePicture}`}
+                src={`${BASE}/uploads/${profile.userId?.profilePicture}`}
                 alt="Profile"
                 style={{
                     width: "120px",

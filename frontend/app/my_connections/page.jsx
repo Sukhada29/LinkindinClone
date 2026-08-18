@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import DashboardLayout from "../DashboardLayout";
 import UserLayout from "@/app/(user)/layout";
 
-const BASE = "http://localhost:9090";
+const BASE = process.env.NEXT_PUBLIC_API_URL;
 
 export default function MyConnectionsPage() {
     const [requests, setRequests] = useState([]);

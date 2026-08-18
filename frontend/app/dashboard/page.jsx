@@ -8,7 +8,7 @@ import { getAboutUser, getAllUsers } from "@/app/config/redux/action/authAction"
 
 import DashboardLayout from "@/app/DashboardLayout";
 
-const BASE = "http://localhost:9090";
+const BASE = process.env.NEXT_PUBLIC_API_URL;
 
 export default function Dashboard() {
 

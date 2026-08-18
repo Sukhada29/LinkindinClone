@@ -11,6 +11,8 @@ import DashboardLayout from "@/app/DashboardLayout";
 
 export default function Profile() {
 
+    const BASE = process.env.NEXT_PUBLIC_API_URL;
+
     const router = useRouter();
 
     const dispatch = useDispatch();
@@ -51,7 +53,7 @@ export default function Profile() {
     </h2>
 
     <img
-    src={`http://localhost:9090/uploads/${authState.user?.userId?.profilePicture}`}
+    src={`${BASE}/uploads/${authState.user?.userId?.profilePicture}`}
     alt="Profile"
     style={{
         width: "120px",

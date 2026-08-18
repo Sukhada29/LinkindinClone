@@ -9,6 +9,8 @@ import {
 
 export default function ConnectionRequests() {
 
+    const BASE = process.env.NEXT_PUBLIC_API_URL;
+
     const dispatch = useDispatch();
 
     const authState = useSelector((state) => state.auth);
@@ -63,7 +65,7 @@ export default function ConnectionRequests() {
                     >
 
                         <img
-                            src={`http://localhost:9090/uploads/${request.userId?.profilePicture}`}
+                            src={`${BASE}/uploads/${request.userId?.profilePicture}`}
                             alt="Profile"
                             style={{
                                 width: "60px",

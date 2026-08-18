@@ -6,7 +6,7 @@ import UserLayout from "@/app/(user)/layout";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllUsers } from "@/app/config/redux/action/authAction";
 
-const BASE = "http://localhost:9090";
+const BASE = "https://linkindinclone.onrender.com";
 
 export default function DiscoverPage() {
     const dispatch = useDispatch();

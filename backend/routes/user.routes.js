@@ -44,6 +44,10 @@ router.route("/user/remove_connection").post(authMiddleware, removeConnection);
 router.route("/user/my_sent_connection_requests").get(authMiddleware, getMySentConnectionRequests);
 router.route("/user/connection_request_status/:connectionId").get(authMiddleware, getConnectionRequestStatus);
 router.route("/user/feed").get(authMiddleware, getFeed);
-router.route("/user/create_post").post(authMiddleware, createPost);
+router.route("/user/create_post").post(
+    authMiddleware,
+    upload.single("media"),
+    createPost
+);
 router.route("/user/search").get(authMiddleware, searchUsers);
 export default router;
